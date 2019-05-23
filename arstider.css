@@ -1,0 +1,163 @@
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section{
+    display: grid;
+    grid-template-areas:
+    "... ... titel titel ... ..."
+    "meny meny första första ... ..."
+    "... ... andra andra ... ..." 
+    "... ... tredje tredje ... ..."
+    "... ... fjarde fjarde ... ..."
+    "... ... femte femte ... ...";
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 150px repeat(5, auto);
+}
+body section h2{
+    grid-area: titel;
+    text-align: center;
+    font-size: 330%;
+    background-color: rgba(156, 151, 151, 0);
+    color: white;
+    padding: 5px 5px 5px 15px;
+    text-shadow: 0.1em 0.06em rgba(0, 0, 0, .75);
+}
+section h3, section p{
+    border-radius: 3px;
+}
+article#första{
+    grid-area: första;
+}
+article#andra{
+    grid-area: andra;
+}
+article#tredje{
+    grid-area: tredje;
+}
+article#fjarde{
+    grid-area: fjarde;
+}
+article#femte{
+    grid-area: femte;
+}
+article h3{
+    font-size: 2em;
+    background-color: rgba(0,0,0,0.75);
+    color: white;
+    padding: 5px 12px 5px 12px;
+    margin: 15px 15px 15px 15px;
+    min-width: min-content;
+    max-width: fit-content;
+}
+article p{
+    font-size: 17.5px;
+    background-color: rgba(0,0,0,0.75);
+    color: white;
+    padding: 7px 7px 7px 7px;
+    min-width: min-content;
+    margin-top: -.5em;
+    margin-bottom: 8.5px;
+}
+
+body nav#meny{
+    top: 10em;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 0.9fr 2fr;
+    }
+body nav#meny ul{
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 8.5em;
+    grid-template-rows: repeat(4, 2.3em);
+    grid-gap: 60px;
+    list-style-type: none;
+    border-style: solid;
+    border-left-style: none;
+    border-right-style: none;
+    border-top-width: 15px;
+    border-radius: 5px;
+    border-bottom-width: 7.5px;
+    background-color: rgba(255, 255, 255, .75);
+    margin-block-end: 0;
+    margin-block-start: 0;
+    height: 26em;
+    animation-name: scroll;
+    animation-duration: 1.2s;
+    margin-bottom: 2em;
+}
+
+@keyframes scroll{
+    from{height: 0;}
+    to{height: 26em;}
+}
+@keyframes objekt_image{
+    from{background-image: none;}
+    to{background-image: initial;}
+}
+
+@keyframes objekt_fadein{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+body nav ul li{
+    margin-top: 3em;
+    margin-left: 0.5em;
+}
+
+body nav ul li a {
+    padding: 2.52em;
+    background-size: contain;
+    background-position: 60% 60%;
+    background-repeat: no-repeat;
+    transition: padding .2s ease-out;
+    transition-delay: unset;
+    animation-name: objekt_image, objekt_fadein;;
+    animation-delay: 0s, 1.3s;
+    animation-duration: 1.3s;
+}
+
+body nav ul li a#Lankhem{
+    background-image: url(homebutton.png);
+}
+body nav ul li a#Lankvinter{
+    background-image: url(seasons_vinter.png)
+}
+body nav ul li a#Lankvar{
+    background-image: url(seasons_var.png)
+}
+body nav ul li a#Lanksommar{
+    background-image: url(seasons_sommar.png)
+}
+body nav ul li a#Lankhost{
+    background-image: url(seasons_host.png)
+}
+nav li a:hover{
+    padding: 2.90em;
+}
+
+/*vinter.html*/
+body#vintern{
+    background-image: url(TradVinter.jpg);
+}
+
+/*var.html*/
+body#varen{
+    background-image: url(TradVar.jpg.crdownload);
+}
+
+/*sommar.html*/
+body#sommaren{
+    background-image: url(TradSommar.jpg);
+}
+
+/*host.html*/
+body#hosten{
+    background-image: url(TradHost.jpg);
+}

@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+body {
+  /*byt bakgrunds bilden*/
+  background: url(skog.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+}
+article {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "titel ... ..."
+    "text meny ..."
+    "kallor ... ...";
+  grid-template-columns: 500px 0.5fr 100px;
+  grid-template-rows: 150px 400px auto;
+  padding: 1em;
+  margin: 1.2em 50% 1.2em 15%;
+}
+@media (max-width: 1075px) {
+  body article {
+    grid-template-areas:
+      "titel"
+      "text"
+      "kallor"
+      "meny";
+    grid-template-columns: 500px;
+    grid-template-rows: auto auto auto auto;
+    margin-left: 15%;
+  }
+  body nav ul {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(2, 150px);
+  }
+  body #titel {
+    padding-bottom: 8px;
+  }
+}
+@media (max-width: 700px) {
+  body article {
+    grid-template-areas:
+      "titel titel"
+      "text meny"
+      "kallor meny";
+    grid-template-columns: 350px 100px;
+    margin-left: 15%;
+  }
+  body #titel {
+    padding-bottom: 8px;
+  }
+  body nav ul {
+    display: grid;
+    grid-template-columns: repeat(1, 150px);
+    grid-template-rows: repeat(4, auto);
+    margin: 0;
+    padding: 0;
+  }
+  body nav li {
+    padding: 2em 1em 3em 1em;
+  }
+  body nav li a {
+    padding: 3em;
+  }
+  body nav li a:hover {
+    padding-bottom: 2.5em;
+    padding-left: 3.5em;
+    padding-right: 4em;
+    padding-top: 2.5em;
+  }
+  body p#text,
+  footer#kallor p {
+    min-width: 0;
+  }
+  article {
+    min-width: 400px;
+  }
+}
+#titel {
+  grid-area: titel;
+  color: floralwhite;
+  max-width: 7.45em;
+  min-width: 405px;
+  font-size: 3em;
+  padding-left: 10px;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
+  height: 60px;
+}
+#text {
+  grid-area: text;
+}
+body p#text,
+footer#kallor p {
+  font-size: 17px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  max-width: 440px;
+  min-width: 300px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 10px 5px 5px 18px;
+}
+footer#kallor {
+  grid-area: kallor;
+  min-width: 140px;
+  max-height: 160px;
+}
+nav {
+  grid-area: meny;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+ul {
+  display: grid;
+  grid-template-rows: repeat(2, 150px);
+  grid-template-columns: repeat(2, 150px);
+  list-style: none;
+  grid-gap: 2em;
+}
+li {
+  margin: auto;
+}
+a {
+  padding: 4em;
+  border-radius: 1em;
+  text-decoration: none;
+  background-position: 60% 90%;
+  transition: padding 0.2s ease-out;
+}
+a:hover {
+  text-transform: uppercase;
+  padding: 5em;
+}
+
+a#Lankvinter {
+  background-image: url(TradVinter.jpg);
+  background-size: cover;
+}
+
+a#Lankvar {
+  background-image: url(TradVar.jpg);
+  background-size: cover;
+}
+
+a#Lanksommar {
+  background-image: url(TradSommar.jpg);
+  background-size: cover;
+}
+
+a#Lankhost {
+  background-image: url(TradHost.jpg);
+  background-size: cover;
+}
